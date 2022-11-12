@@ -1,0 +1,1 @@
+osmfilter map.osm --keep="amenity=library" --keep="amenity=internet_cafe" --keep="amenity=cafe" --keep="amenity=university" --keep="amenity=reading room" | osmconvert64-0.8.8p.exe - --all-to-nodes --csv="@id @lat @lon name location amenity opening_hours" --csv-headline --csv-separator="," -o="studyspots.csv"
