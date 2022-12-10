@@ -8,7 +8,7 @@
     <h1>Study spots near you</h1>
     <p>Here's a list of study spots near you</p>
     <table>
-        <tr th:each="spot : ${session.spots}">
+        <tr th:if="${spot.getAmenity()!=null}" th:each="spot : ${session.spots}">
             <td th:text="${spot.getName()}"></td>
             <td th:text="${spot.getAmenity()}"></td>
         </tr>

@@ -5,7 +5,12 @@
     <title>Spots of chosen type</title>
 </head>
 <body>
-    <h1>Spots of </h1> <h1 th:text="${session.spot_type}"></h1>
-    <p>Here's a list of study spots of the type you chose</p>
+    <h1>Spots of type:</h1> <h1 th:text="${session.spot_type}"></h1>
+    <p>Here's a list of study spots of the type you chose</p>    <table>
+        <tr th:if="${spot.getAmenity()==session.spot_type}" th:each="spot : ${session.spots}" >
+            <td th:text="${spot.getName()}"></td>
+            <td th:text="${spot.getAmenity()}"></td>
+        </tr>
+    </table>
 </body>
 </html>
