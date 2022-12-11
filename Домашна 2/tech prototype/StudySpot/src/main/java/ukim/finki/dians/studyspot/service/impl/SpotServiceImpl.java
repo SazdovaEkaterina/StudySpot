@@ -20,4 +20,9 @@ public class SpotServiceImpl implements SpotService {
     public List<Spot> listAllSpots() {
         return spotRepository.listAllSpots();
     }
+
+    @Override
+    public Spot findById(String id) {
+        return spotRepository.findById(Long.parseLong(id));
+    }
 }

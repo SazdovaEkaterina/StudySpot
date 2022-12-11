@@ -21,7 +21,7 @@ public class SpotsNearYouController {
 
     @GetMapping
     public String getStudySpotsNearYou(HttpSession httpSession) {
-        httpSession.setAttribute("spots",this.spotService.listAllSpots());
+        httpSession.setAttribute("spots", this.spotService.listAllSpots());
         return "spots_near_you";
     }
 

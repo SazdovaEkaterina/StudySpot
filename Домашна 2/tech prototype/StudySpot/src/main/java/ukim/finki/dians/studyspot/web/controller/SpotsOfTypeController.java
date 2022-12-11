@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SpotsOfTypeController {
 
     @GetMapping
-    public String getStudySpotsOfType()  {
+    public String getStudySpotsOfType() {
 
         return "spots_of_type";
     }

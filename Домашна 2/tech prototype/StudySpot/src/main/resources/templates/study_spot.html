@@ -5,7 +5,20 @@
     <title>Study Spot</title>
 </head>
 <body>
-    <h1>Study spot details</h1>
-    <h3 th:text="${session.spot_id}"></h3>
+<h1>Study spot details</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Opening Hours</th>
+    </tr>
+    <tr>
+        <td th:text="${session.spot.getId()}"></td>
+        <td th:text="${session.spot.getName()}"></td>
+        <td th:text="${session.spot.getAmenity()}"></td>
+        <td th:text="${session.spot.getOpening_hours()}"></td>
+    </tr>
+</table>
 </body>
 </html>

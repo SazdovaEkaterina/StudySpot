@@ -10,8 +10,14 @@ import static ukim.finki.dians.studyspot.bootstrap.DataHolder.spots;
 @Repository
 public class SpotRepository {
 
-    public List<Spot> listAllSpots(){
+    public List<Spot> listAllSpots() {
         return spots;
+    }
+
+    public Spot findById(long spot_id) {
+        return spots.stream()
+                .filter(s -> s.getId() == (spot_id))
+                .findFirst().get();
     }
 
 }
