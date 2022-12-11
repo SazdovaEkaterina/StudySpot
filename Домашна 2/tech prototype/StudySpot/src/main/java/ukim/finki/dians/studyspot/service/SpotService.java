@@ -9,4 +9,6 @@ public interface SpotService {
     List<Spot> listAllSpots();
 
     Spot findById(String id);
+
+    Spot generateRandom();
 }

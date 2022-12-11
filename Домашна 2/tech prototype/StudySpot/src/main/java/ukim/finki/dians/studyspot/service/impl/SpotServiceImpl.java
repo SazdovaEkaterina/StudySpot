@@ -25,4 +25,9 @@ public class SpotServiceImpl implements SpotService {
     public Spot findById(String id) {
         return spotRepository.findById(Long.parseLong(id));
     }
+
+    @Override
+    public Spot generateRandom() {
+        return spotRepository.generateRandom();
+    }
 }
