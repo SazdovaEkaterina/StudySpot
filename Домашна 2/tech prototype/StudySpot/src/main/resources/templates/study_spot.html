@@ -12,12 +12,16 @@
         <th>Name</th>
         <th>Type</th>
         <th>Opening Hours</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
     </tr>
     <tr>
         <td th:text="${session.spot.getId()}"></td>
         <td th:text="${session.spot.getName()}"></td>
         <td th:text="${session.spot.getAmenity()}"></td>
         <td th:text="${session.spot.getOpening_hours()}"></td>
+        <td th:text="${session.spot.getLatitude()}"></td>
+        <td th:text="${session.spot.getLongitude()}"></td>
     </tr>
 </table>
 </body>
