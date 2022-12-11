@@ -8,9 +8,22 @@
     <h1>Study spots near you</h1>
     <p>Here's a list of study spots near you</p>
     <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Opening Hours</th>
+        </tr>
         <tr th:if="${spot.getAmenity()!=null}" th:each="spot : ${session.spots}">
+            <td th:text="${spot.getId()}"></td>
             <td th:text="${spot.getName()}"></td>
             <td th:text="${spot.getAmenity()}"></td>
+            <td th:text="${spot.getOpening_hours()}"></td>
+            <td>
+                <form action="#" th:action="@{/study-spots-near-you}" method="post">
+                    <button type="submit" name="details_button" id="details_button" th:value="${spot.getId()}">View Details</button>
+                </form>
+            </td>
         </tr>
     </table>
 </body>
