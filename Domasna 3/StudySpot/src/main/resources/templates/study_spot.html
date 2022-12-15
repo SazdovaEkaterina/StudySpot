@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Spot</title>
+</head>
+<body>
+<h1>Study spot details</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Opening Hours</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    <tr>
+        <td th:text="${session.spot.getId()}"></td>
+        <td th:text="${session.spot.getName()}"></td>
+        <td th:text="${session.spot.getAmenity()}"></td>
+        <td th:text="${session.spot.getOpening_hours()}"></td>
+        <td th:text="${session.spot.getLatitude()}"></td>
+        <td th:text="${session.spot.getLongitude()}"></td>
+    </tr>
+</table>
+</body>
+</html>

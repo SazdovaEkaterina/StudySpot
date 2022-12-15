@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Home</h1>
+<form action="#" th:action="@{/home}" method="post">
+    <button type="submit" name="button1">Study spots near me</button>
+    <button type="submit" name="button2">Specific type of study spot</button>
+    <select id="spot_type" name="spot_type">
+        <option value="cafe" selected>Cafe</option>
+        <option value="internet_cafe">Internet Cafe</option>
+        <option value="library">Library</option>
+        <option value="university">University</option>
+        <option value="reading room">Reading Room</option>
+    </select>
+    <button type="submit" name="button3">Surprise me</button>
+</form>
+</body>
+</html>
