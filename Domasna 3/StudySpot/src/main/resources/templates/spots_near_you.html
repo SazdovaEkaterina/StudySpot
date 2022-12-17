@@ -5,8 +5,64 @@
     <title>Study spots near you</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        div > header > .logo-title {
+            background: #84A59D;
+            padding: 8px 5px 8px 84px;
+            display: flex;
+            align-items: center;
+        }
+        div > header > div.logo-title > span {
+            font-size: 56px;
+            margin-right: 14px;
+        }
+        div > header > div.nav-links  {
+            background: #F5CAC3;
+        }
+       div > header >  div.nav-links > nav  {
+           margin-left: 140px;
+       }
+        div > header >  div.nav-links > nav >a {
+            color: white;
+        }
+        div > header > div.nav-links >nav  > span{
+            color: white;
+            margin-top: 8px;
+        }
+        div > header > div.nav-links > nav > a:hover {
+            color: black;
+        }
+        div > header > div > nav > div.icons {
+            position: absolute;
+            left: 90%;
+        }
+        div > header > div > nav > div.icons > span {
+            font-size: 30px;
+            color: white;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
+<div>
+<header>
+    <div class="logo-title">
+        <span class="material-icons">cast_for_education</span>
+        <h4 class="title">Study Spot</h4>
+    </div>
+    <div class="nav-links">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="text-sm-center nav-link " href="#">Main Page</a>
+        <span> > </span>
+        <a class=" text-sm-center nav-link" href="#">Study spots near you</a>
+        <div class="icons">
+            <span class="material-icons">home</span>
+            <span class="material-icons">share</span>
+        </div>
+    </nav>
+    </div>
+</header>
 <h1>Study spots near you</h1>
 <p>Here's a list of study spots near you</p>
 <table>
@@ -30,5 +86,6 @@
         </td>
     </tr>
 </table>
+</div>
 </body>
 </html>
