@@ -1,0 +1,16 @@
+ div > header > h4 {
+  background: #84A59D;
+  padding: 23px 5px 23px 145px;
+ }
+ div > header > nav {
+  background: #F5CAC3;
+  margin-top: -8px;
+ }
+ div > header > nav > a{
+  color: white;
+  margin-left: 140px;
+ }
+
+ div > header > nav > a:hover {
+  color: black;
+ }
