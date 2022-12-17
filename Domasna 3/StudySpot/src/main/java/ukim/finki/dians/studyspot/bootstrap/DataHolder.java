@@ -21,7 +21,7 @@ public class DataHolder {
     @PostConstruct
     public void init() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(
-                new FileReader("C:\\Users\\Ekaterina\\Documents\\Stuff\\fakultet\\semestar 5\\dizajn i arhitektura na softver\\StudySpot\\StudySpot\\Домашна 1\\studyspots.csv"));
+                new FileReader("C:\\Users\\Acer\\Desktop\\StudySpot\\Домашна 1\\studyspots.csv"));
         bufferedReader.readLine();
         String line = bufferedReader.readLine();
         while (line != null) {
