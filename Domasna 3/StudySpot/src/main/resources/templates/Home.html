@@ -42,6 +42,95 @@
             color: white;
             margin-top: 5px;
         }
+        body > main > div.containers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        body > main > div.containers > div.container-left {
+            display: flex;
+            flex-direction: column;
+            background: antiquewhite;
+            padding: 74px;
+        }
+        body > main > div.containers > div.container-left > span {
+            font-size: 348px;
+            text-align: center;
+        }
+        body > main > div.containers > div.container-left > p {
+            font-size: 20px;
+            width: 494px;
+            font-weight: 500;
+            margin-left: 60px;
+        }
+        body > main > div.containers > div.container-right {
+            display: flex;
+            flex-direction: column;
+            margin-left: 123px;
+        }
+        body > main > div > div.container-right > h2 {
+            display: flex;
+            justify-content: center;
+            font-size: 56px;
+            width: 400px;
+            text-align: center;
+            margin-top: 25px;
+            margin-left: -22px;
+        }
+        body > main > div.containers > div.container-right > form {
+            display: flex;
+            flex-direction: column;
+            margin-left: 14px;
+        }
+        main > div.containers > div.container-right > form > button {
+            background: #007bff;
+            border-radius: 7px;
+            padding: 22px;
+            margin: 11px;
+            border-color: #007bff;
+            color: white;
+            width: 266px;
+        }
+        #spot_type {
+            background: #007bff;
+            padding: 8px;
+            width: 356px;
+            border-radius: 5px;
+            color: white;
+            margin-left: 13px;
+        }
+        #spot_type > option {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        main > div:nth-child(2) > span {
+            font-size: 132px;
+            position: absolute;
+            left: 80%;
+            top: 41%;
+            color: #007bff29;
+        }
+       main > div.circle-details {
+            position: absolute;
+            left: 89%;
+            margin-top: -97px;
+        }
+        main > div.circle-details > span
+        {
+            color: lightgray;
+            font-size: 29px;
+        }
+        footer{
+            position: absolute;
+            left: 80%;
+            margin-top: -35px;
+        }
+        footer a {
+            margin-left: 44px;
+            color: red;
+            font-weight: 700;
+            font-size: 15px;
+        }
     </style>
 </head>
 <body>
@@ -62,19 +151,44 @@
             </nav>
         </div>
     </header>
-
-<form action="#" th:action="@{/home}" method="post">
-    <button type="submit" name="button1">Study spots near me</button>
-    <button type="submit" name="button2">Specific type of study spot</button>
-    <select id="spot_type" name="spot_type">
-        <option value="cafe" selected>Cafe</option>
-        <option value="internet_cafe">Internet Cafe</option>
-        <option value="library">Library</option>
-        <option value="university">University</option>
-        <option value="reading room">Reading Room</option>
-    </select>
-    <button type="submit" name="button3">Surprise me</button>
-</form>
 </div>
+    <main>
+    <div class="containers">
+        <div class="container-left">
+            <span class="material-icons">manage_accounts</span>
+            <p>We are here to help you find a location for studying and working.We
+         offer information about libraries, coworking spaces, cafes and restaurants that
+        that are suitable for studying. Enjoy! </p>
+        </div>
+        <div class="container-right">
+            <h2>What are you looking for?</h2>
+            <form action="#" th:action="@{/home}" method="post">
+                <button type="submit" name="button1">Study spots near me</button>
+                <button type="submit" name="button2">Specific type of study spot</button>
+                <select id="spot_type" name="spot_type">
+                    <option class="btn btn-primary" value="cafe" selected>Cafe</option>
+                    <option class="btn btn-primary" value="internet_cafe">Internet Cafe</option>
+                    <option class="btn btn-primary" value="library">Library</option>
+                    <option class="btn btn-primary" value="university">University</option>
+                    <option class="btn btn-primary" value="reading room">Reading Room</option>
+                </select>
+                <button class="btn btn-primary" type="submit" name="button3">Surprise me</button>
+            </form>
+        </div>
+    </div>
+   <div class="icon-world">
+       <span class="material-icons">public</span>
+   </div>
+        <div class="circle-details">
+            <span class="material-icons">lens</span>
+            <span class="material-icons">lens</span>
+            <span class="material-icons">lens</span>
+        </div>
+
+    </main>
+<footer>
+    <a href="#">Contact</a>
+    <a href="#">Help</a>
+</footer>
 </body>
 </html>
