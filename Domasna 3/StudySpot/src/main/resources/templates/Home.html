@@ -7,133 +7,332 @@
     <link rel="stylesheet" href="../static/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        div > header > .logo-title {
-            background: #84A59D;
-            padding: 8px 5px 8px 84px;
-            display: flex;
-            align-items: center;
+        @media (max-width: 660px) {
+            .container-fluid {
+                padding: 0;
+            }
+            div > header > .logo-title {
+                background: #84A59D;
+                padding: 8px 5px 8px 84px;
+                display: flex;
+                align-items: center;
+            }
+            div > header > div.logo-title > span {
+                font-size: 56px;
+                margin-right: 14px;
+            }
+            div > header > div.nav-links  {
+                background: #F5CAC3;
+            }
+            div > header >  div.nav-links > nav  {
+                margin-left: 140px;
+            }
+            div > header >  div.nav-links > nav >a {
+                color: white;
+            }
+            div > header > div.nav-links >nav  > span{
+                color: white;
+                margin-top: 8px;
+            }
+            div > header > div.nav-links > nav > a:hover {
+                color: black;
+            }
+            div > header > div > nav > div.icons {
+                position: absolute;
+                left: 90%;
+            }
+            div > header > div > nav > div.icons > span {
+                font-size: 30px;
+                color: white;
+                margin-top: 5px;
+            }
+            .row{ margin-right: 0px}
+            div > div.row > div:nth-child(1) {
+                background: antiquewhite;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > span {
+                font-size: 320px;
+                margin-left: 120px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > p {
+                font-size: 13px;
+                width: 350px;
+                font-weight: 500;
+                margin-left: 107px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > h2 {
+                font-size: 40px;
+                width: 400px;
+                text-align: center;
+                margin-top: 25px;
+                margin-left: 80px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 130px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form > button {
+                background: #007bff;
+                border-radius: 7px;
+                padding: 22px;
+                margin: 11px;
+                border-color: #007bff;
+                color: white;
+                width: 240px;
+            }
+            #spot_type {
+                background: #007bff;
+                padding: 8px;
+                width: 260px;
+                border-radius: 5px;
+                color: white;
+                margin-left: 13px;
+            }
+            #spot_type > option {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            body > div > div.icon-world > span {
+               display: none;
+            }
+            body > div > div.circle-details {
+                color: lightgray;
+            }
+            footer a {
+                color: red;
+            }
+            body > div > div.icon-world {
+                visibility: hidden;
+            }
         }
-         div > header > div.logo-title > span {
-             font-size: 56px;
-             margin-right: 14px;
+        @media (min-width: 660px  )  {
+            .container-fluid {
+                padding: 0;
+            }
+            div > header > .logo-title {
+                background: #84A59D;
+                padding: 8px 5px 8px 84px;
+                display: flex;
+                align-items: center;
+            }
+            div > header > div.logo-title > span {
+                font-size: 56px;
+                margin-right: 14px;
+            }
+            div > header > div.nav-links  {
+                background: #F5CAC3;
+            }
+            div > header >  div.nav-links > nav  {
+                margin-left: 140px;
+            }
+            div > header >  div.nav-links > nav >a {
+                color: white;
+            }
+            div > header > div.nav-links >nav  > span{
+                color: white;
+                margin-top: 8px;
+            }
+            div > header > div.nav-links > nav > a:hover {
+                color: black;
+            }
+            div > header > div > nav > div.icons {
+                position: absolute;
+                left: 90%;
+            }
+            div > header > div > nav > div.icons > span {
+                font-size: 30px;
+                color: white;
+                margin-top: 5px;
+            }
+            .row{ margin-right: 0px}
+            div > div.row > div:nth-child(1) {
+                background: antiquewhite;
+                height: 632px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > span {
+                font-size: 272px;
+                margin-left: 84px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > p {
+                width: 300px;
+                font-weight: 500;
+                margin-left: 91px;
+                line-height: 34px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > h2 {
+                font-size: 47px;
+                text-align: center;
+                margin-top: 25px;
+
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 40px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form > button {
+                background: #007bff;
+                border-radius: 7px;
+                padding: 22px;
+                margin: 11px;
+                border-color: #007bff;
+                color: white;
+                width: 250px;
+            }
+            #spot_type {
+                background: #007bff;
+                padding: 8px;
+                width: 255px;
+                border-radius: 5px;
+                color: white;
+                margin-left: 13px;
+            }
+            #spot_type > option {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            body > div > div.icon-world > span {
+                font-size: 128px;
+                position: absolute;
+                left: 70%;
+                top: 41%;
+                color: #007bff29;
+
+            }
+            body > div > div.circle-details {
+                position: absolute;
+                left: 88%;
+                color: lightgray;
+                margin-top: -61px;
+            }
+            footer {
+                width: 200px !important;
+                left: 71%;
+                margin-top: -31px;
+            }
+            footer a {
+                color: red;
+            }
+
+        }
+        @media (min-width: 1000px) {
+            .container-fluid {
+                padding: 0;
+            }
+            div > header > .logo-title {
+                background: #84A59D;
+                padding: 8px 5px 8px 84px;
+                display: flex;
+                align-items: center;
+            }
+            div > header > div.logo-title > span {
+                font-size: 56px;
+                margin-right: 14px;
+            }
+            div > header > div.nav-links  {
+                background: #F5CAC3;
+            }
+            div > header >  div.nav-links > nav  {
+                margin-left: 140px;
+            }
+            div > header >  div.nav-links > nav >a {
+                color: white;
+            }
+            div > header > div.nav-links >nav  > span{
+                color: white;
+                margin-top: 8px;
+            }
+            div > header > div.nav-links > nav > a:hover {
+                color: black;
+            }
+            div > header > div > nav > div.icons {
+                position: absolute;
+                left: 90%;
+            }
+            div > header > div > nav > div.icons > span {
+                font-size: 30px;
+                color: white;
+                margin-top: 5px;
+            }
+            .row{ margin-right: 0px}
+            div > div.row > div:nth-child(1) {
+                background: antiquewhite;
+                height: 632px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > span {
+                font-size: 348px;
+                margin-left: 131px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > p {
+                font-size: 18px;
+                width: 329px;
+                font-weight: 500;
+                margin-left: 153px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > h2 {
+                font-size: 56px;
+                width: 390px;
+                text-align: center;
+                margin-top: 25px;
+                margin-left: 104px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 148px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form > button {
+                background: #007bff;
+                border-radius: 7px;
+                padding: 22px;
+                margin: 11px;
+                border-color: #007bff;
+                color: white;
+                width: 266px;
+            }
+            #spot_type {
+                background: #007bff;
+                padding: 8px;
+                width: 320px;
+                border-radius: 5px;
+                color: white;
+                margin-left: 13px;
+            }
+            #spot_type > option {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            body > div > div.icon-world > span {
+                font-size: 147px;
+                position: absolute;
+                left: 88%;
+                top: 41%;
+                color: #007bff29;
+            }
+            body > div > div.circle-details {
+                position: absolute;
+                left: 88%;
+                color: lightgray;
+                margin-top: -61px;
+            }
+            footer {
+                width: 200px !important;
+                left: 71%;
+                margin-top: -31px;
+            }
+            footer a {
+                color: red;
+            }
+
          }
-        div > header > div.nav-links  {
-            background: #F5CAC3;
-        }
-        div > header >  div.nav-links > nav  {
-            margin-left: 140px;
-        }
-        div > header >  div.nav-links > nav >a {
-            color: white;
-        }
-        div > header > div.nav-links >nav  > span{
-            color: white;
-            margin-top: 8px;
-        }
-        div > header > div.nav-links > nav > a:hover {
-            color: black;
-        }
-        div > header > div > nav > div.icons {
-            position: absolute;
-            left: 90%;
-        }
-        div > header > div > nav > div.icons > span {
-            font-size: 30px;
-            color: white;
-            margin-top: 5px;
-        }
-        body > main > div.containers {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        body > main > div.containers > div.container-left {
-            display: flex;
-            flex-direction: column;
-            background: antiquewhite;
-            padding: 74px;
-        }
-        body > main > div.containers > div.container-left > span {
-            font-size: 348px;
-            text-align: center;
-        }
-        body > main > div.containers > div.container-left > p {
-            font-size: 20px;
-            width: 494px;
-            font-weight: 500;
-            margin-left: 60px;
-        }
-        body > main > div.containers > div.container-right {
-            display: flex;
-            flex-direction: column;
-            margin-left: 123px;
-        }
-        body > main > div > div.container-right > h2 {
-            display: flex;
-            justify-content: center;
-            font-size: 56px;
-            width: 400px;
-            text-align: center;
-            margin-top: 25px;
-            margin-left: -22px;
-        }
-        body > main > div.containers > div.container-right > form {
-            display: flex;
-            flex-direction: column;
-            margin-left: 14px;
-        }
-        main > div.containers > div.container-right > form > button {
-            background: #007bff;
-            border-radius: 7px;
-            padding: 22px;
-            margin: 11px;
-            border-color: #007bff;
-            color: white;
-            width: 266px;
-        }
-        #spot_type {
-            background: #007bff;
-            padding: 8px;
-            width: 356px;
-            border-radius: 5px;
-            color: white;
-            margin-left: 13px;
-        }
-        #spot_type > option {
-            color: #fff;
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-        main > div:nth-child(2) > span {
-            font-size: 132px;
-            position: absolute;
-            left: 80%;
-            top: 41%;
-            color: #007bff29;
-        }
-       main > div.circle-details {
-            position: absolute;
-            left: 89%;
-            margin-top: -97px;
-        }
-        main > div.circle-details > span
-        {
-            color: lightgray;
-            font-size: 29px;
-        }
-        footer{
-            position: absolute;
-            left: 80%;
-            margin-top: -35px;
-        }
-        footer a {
-            margin-left: 44px;
-            color: red;
-            font-weight: 700;
-            font-size: 15px;
-        }
     </style>
 </head>
 <body>
+<div class="container-fluid">
 <div>
     <header>
         <div class="logo-title">
@@ -152,15 +351,14 @@
         </div>
     </header>
 </div>
-    <main>
-    <div class="containers">
-        <div class="container-left">
+    <div class="row">
+        <div class="col col-lg-6 col-md-6 col-sm-12">
             <span class="material-icons">manage_accounts</span>
             <p>We are here to help you find a location for studying and working.We
-         offer information about libraries, coworking spaces, cafes and restaurants that
-        that are suitable for studying. Enjoy! </p>
+                offer information about libraries, coworking spaces, cafes and restaurants that
+                that are suitable for studying. Enjoy! </p>
         </div>
-        <div class="container-right">
+        <div class="col col-lg-6 col-md-6 col-sm-12">
             <h2>What are you looking for?</h2>
             <form action="#" th:action="@{/home}" method="post">
                 <button type="submit" name="button1">Study spots near me</button>
@@ -176,19 +374,23 @@
             </form>
         </div>
     </div>
-   <div class="icon-world">
-       <span class="material-icons">public</span>
-   </div>
-        <div class="circle-details">
-            <span class="material-icons">lens</span>
-            <span class="material-icons">lens</span>
-            <span class="material-icons">lens</span>
-        </div>
+    <div class="icon-world">
+        <span class="material-icons">public</span>
+    </div>
+    <div class="circle-details">
+        <span class="material-icons">lens</span>
+        <span class="material-icons">lens</span>
+        <span class="material-icons">lens</span>
+    </div>
 
-    </main>
-<footer>
-    <a href="#">Contact</a>
-    <a href="#">Help</a>
-</footer>
+
+    <footer class="col-sm-12 col-md-12 col-lg-12">
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+    </footer>
+</div>
+
+
+
 </body>
 </html>
