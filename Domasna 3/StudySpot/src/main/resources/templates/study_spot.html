@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../static/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        .container-fluid {
+            padding: 0;
+        }
         div > header > .logo-title {
             background: #84A59D;
             padding: 8px 5px 8px 84px;
@@ -17,13 +20,13 @@
             font-size: 56px;
             margin-right: 14px;
         }
-        div > header > div.nav-links {
+        div > header > div.nav-links  {
             background: #F5CAC3;
         }
         div > header >  div.nav-links > nav  {
             margin-left: 140px;
         }
-        div > header >  div.nav-links > nav > a {
+        div > header >  div.nav-links > nav >a {
             color: white;
         }
         div > header > div.nav-links >nav  > span{
@@ -45,46 +48,44 @@
     </style>
 </head>
 <body>
-<div>
-<header>
-    <div class="logo-title">
-        <span class="material-icons">cast_for_education</span>
-        <h4 class="title">Study Spot</h4>
-    </div>
-    <div class="nav-links">
-        <nav class="nav nav-pills flex-column flex-sm-row">
-            <a class="text-sm-center nav-link " href="#">Main Page</a>
-            <span> > </span>
-            <a class=" text-sm-center nav-link" href="#">Study spots near you</a>
-            <span> > </span>
-            <a class=" text-sm-center nav-link" href="#">Selected study spot</a>
-            <div class="icons">
-                <span class="material-icons">home</span>
-                <span class="material-icons">share</span>
+<div class="container-fluid">
+    <div>
+        <header>
+            <div class="logo-title">
+                <span class="material-icons">cast_for_education</span>
+                <h4 class="title">Study Spot</h4>
             </div>
+            <div class="nav-links">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="text-sm-center nav-link " href="#">Main Page</a>
+                    <div class="icons">
+                        <span class="material-icons">home</span>
+                        <span class="material-icons">share</span>
+                    </div>
 
-        </nav>
+                </nav>
+            </div>
+        </header>
     </div>
-</header>
-<h1>Study spot details</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Opening Hours</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-    </tr>
-    <tr>
-        <td th:text="${session.spot.getId()}"></td>
-        <td th:text="${session.spot.getName()}"></td>
-        <td th:text="${session.spot.getAmenity()}"></td>
-        <td th:text="${session.spot.getOpening_hours()}"></td>
-        <td th:text="${session.spot.getLatitude()}"></td>
-        <td th:text="${session.spot.getLongitude()}"></td>
-    </tr>
-</table>
+    <h1>Study spot details</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Opening Hours</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+        <tr>
+            <td th:text="${session.spot.getId()}"></td>
+            <td th:text="${session.spot.getName()}"></td>
+            <td th:text="${session.spot.getAmenity()}"></td>
+            <td th:text="${session.spot.getOpening_hours()}"></td>
+            <td th:text="${session.spot.getLatitude()}"></td>
+            <td th:text="${session.spot.getLongitude()}"></td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
