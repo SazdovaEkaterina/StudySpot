@@ -57,7 +57,7 @@
             </div>
             <div class="nav-links">
                 <nav class="nav nav-pills flex-column flex-sm-row">
-                    <a class="text-sm-center nav-link " href="#">Main Page</a>
+                    <a class="text-sm-center nav-link " href="/home">Main Page</a>
                     <div class="icons">
                         <span class="material-icons">home</span>
                         <span class="material-icons">share</span>
@@ -68,35 +68,42 @@
         </header>
     </div>
 
+    <section class="jumbotron text-center">
+        <div class="container">
+            <!--            <h1 class="jumbotron-heading">Spots of type: Library</h1>-->
+            <h1 class="jumbotron-heading" >Study spots near you</h1>
+            <p>Here's a list of study spots near you</p>
+        </div>
+    </section>
 
-    <h1>Study spots near you</h1>
-    <p>Here's a list of study spots near you</p>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Opening Hours</th>
-        </tr>
-        <tr th:if="${spot.getAmenity()!=null}" th:each="spot : ${session.spots}">
-            <td th:text="${spot.getId()}"></td>
-            <td th:text="${spot.getName()}"></td>
-            <td th:text="${spot.getAmenity()}"></td>
-            <td th:text="${spot.getOpening_hours()}"></td>
-            <td>
-                <form action="#" th:action="@{/study-spots-near-you}" method="post">
-                    <button type="submit" name="details_button" id="details_button" th:value="${spot.getId()}">View
-                        Details
-                    </button>
-                </form>
-            </td>
-        </tr>
-    </table>
+    <div class="album py-5 bg-light">
+        <div class="container">
 
+            <div class="row">
+                <div class="col-md-4" th:if="${spot.getAmenity()!=null}" th:each="spot : ${session.spots}">
+                    <div class="card mb-4 box-shadow">
+                        <!--                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" th:src="@{'study-spots-of-type/image/' + ${spot.getId()}}" alt="Card image cap">-->
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" th:src="@{'C:\Users\User\IdeaProjects\StudySpot\Domasna 3\StudySpot\src\main\resources\static\images' + '\\' + ${spot.getId()}}" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text" th:text="${spot.getName() + ', ' + spot.getAmenity()}"></p>
+                            <!--                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <small class="text-muted">Open now</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    <form action="#" th:action="@{/study-spots-near-you}" method="post">-->
+<!--        <button type="submit" name="details_button" id="details_button" th:value="${spot.getId()}">View-->
+<!--            Details-->
+<!--        </button>-->
+<!--    </form>-->
 </div>
-
-
-
 
 </body>
 </html>
