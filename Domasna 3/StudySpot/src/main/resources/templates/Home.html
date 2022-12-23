@@ -94,8 +94,16 @@
                 background-color: #007bff;
                 border-color: #007bff;
             }
+            body > div > div.row > div:nth-child(2) > form > button:nth-child(3) {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                padding: 0px;
+                margin-left: 278px;
+                margin-top: -32px;
+            }
             body > div > div.icon-world > span {
-               display: none;
+                display: none;
             }
             body > div > div.circle-details {
                 color: lightgray;
@@ -165,7 +173,6 @@
                 font-size: 47px;
                 text-align: center;
                 margin-top: 25px;
-
             }
             body > div.container-fluid > div > div:nth-child(2) > form {
                 display: flex;
@@ -184,7 +191,7 @@
             #spot_type {
                 background: #007bff;
                 padding: 8px;
-                width: 255px;
+                width: 268px;
                 border-radius: 5px;
                 color: white;
                 margin-left: 13px;
@@ -194,22 +201,33 @@
                 background-color: #007bff;
                 border-color: #007bff;
             }
+            body > div > div.row > div:nth-child(2) > form > button:nth-child(3) {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                padding: 0px;
+                margin-left: 287px;
+                margin-top: -32px;
+            }
             body > div > div.icon-world > span {
                 font-size: 128px;
                 position: absolute;
-                left: 70%;
-                top: 41%;
+                left: 79%;
+                top: 32%;
                 color: #007bff29;
-
             }
             body > div > div.circle-details {
                 position: absolute;
                 left: 88%;
                 color: lightgray;
                 margin-top: -61px;
+                position: absolute;
+                left: 88%;
+                color: lightgray;
+                margin-top: -61px;
             }
             footer {
-                width: 200px !important;
+                width: 158px !important;
                 left: 71%;
                 margin-top: -31px;
             }
@@ -274,15 +292,15 @@
             }
             body > div.container-fluid > div > div:nth-child(2) > h2 {
                 font-size: 56px;
-                width: 390px;
+                width: 351px;
                 text-align: center;
                 margin-top: 25px;
-                margin-left: 104px;
+                margin-left: 103px;
             }
             body > div.container-fluid > div > div:nth-child(2) > form {
                 display: flex;
                 flex-direction: column;
-                margin-left: 148px;
+                margin-left: 120px;
             }
             body > div.container-fluid > div > div:nth-child(2) > form > button {
                 background: #007bff;
@@ -296,7 +314,7 @@
             #spot_type {
                 background: #007bff;
                 padding: 8px;
-                width: 320px;
+                width: 290px;
                 border-radius: 5px;
                 color: white;
                 margin-left: 13px;
@@ -306,10 +324,18 @@
                 background-color: #007bff;
                 border-color: #007bff;
             }
+            body > div > div.row > div:nth-child(2) > form > button:nth-child(3) {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                padding: 0px;
+                margin-left: 306px;
+                margin-top: -32px;
+            }
             body > div > div.icon-world > span {
-                font-size: 147px;
+                font-size: 143px;
                 position: absolute;
-                left: 88%;
+                left: 84%;
                 top: 41%;
                 color: #007bff29;
             }
@@ -328,29 +354,28 @@
                 color: red;
             }
 
-         }
+        }
     </style>
 </head>
 <body>
 <div class="container-fluid">
-<div>
-    <header>
-        <div class="logo-title">
-            <span class="material-icons">cast_for_education</span>
-            <h4 class="title">Study Spot</h4>
-        </div>
-        <div class="nav-links">
-            <nav class="nav nav-pills flex-column flex-sm-row">
-                <a class="text-sm-center nav-link " href="#">Main Page</a>
-                <div class="icons">
-                    <span class="material-icons">home</span>
-                    <span class="material-icons">share</span>
-                </div>
-
-            </nav>
-        </div>
-    </header>
-</div>
+    <div>
+        <header>
+            <div class="logo-title">
+                <span class="material-icons">cast_for_education</span>
+                <h4 class="title">Study Spot</h4>
+            </div>
+            <div class="nav-links">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="text-sm-center nav-link " href="#">Main Page</a>
+                    <div class="icons">
+                        <span class="material-icons">home</span>
+                        <span class="material-icons">share</span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
     <div class="row">
         <div class="col col-lg-6 col-md-6 col-sm-12">
             <span class="material-icons">manage_accounts</span>
@@ -362,14 +387,15 @@
             <h2>What are you looking for?</h2>
             <form action="#" th:action="@{/home}" method="post">
                 <button type="submit" name="button1">Study spots near me</button>
-                <button type="submit" name="button2">Specific type of study spot</button>
-                <select id="spot_type" name="spot_type">
-                    <option class="btn btn-primary" value="cafe" selected>Cafe</option>
+                <select id="spot_type" name="spot_type" >
+                    <option value="" disabled selected hidden>Specific type of study spot</option>
+                    <option class="btn btn-primary" value="cafe" >Cafe</option>
                     <option class="btn btn-primary" value="internet_cafe">Internet Cafe</option>
                     <option class="btn btn-primary" value="library">Library</option>
                     <option class="btn btn-primary" value="university">University</option>
                     <option class="btn btn-primary" value="reading room">Reading Room</option>
                 </select>
+                <button type="submit" name="button2"> <span class="material-icons">search </span></button>
                 <button class="btn btn-primary" type="submit" name="button3">Surprise me</button>
             </form>
         </div>
@@ -382,15 +408,10 @@
         <span class="material-icons">lens</span>
         <span class="material-icons">lens</span>
     </div>
-
-
     <footer class="col-sm-12 col-md-12 col-lg-12">
         <a href="#">Contact</a>
         <a href="#">Help</a>
     </footer>
 </div>
-
-
-
 </body>
 </html>
