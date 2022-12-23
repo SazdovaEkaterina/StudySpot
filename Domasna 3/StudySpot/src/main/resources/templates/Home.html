@@ -173,7 +173,6 @@
                 font-size: 47px;
                 text-align: center;
                 margin-top: 25px;
-
             }
             body > div.container-fluid > div > div:nth-child(2) > form {
                 display: flex;
@@ -213,7 +212,7 @@
             body > div > div.icon-world > span {
                 font-size: 128px;
                 position: absolute;
-                left: 82%;
+                left: 79%;
                 top: 32%;
                 color: #007bff29;
             }
@@ -228,7 +227,7 @@
                 margin-top: -61px;
             }
             footer {
-                width: 200px !important;
+                width: 158px !important;
                 left: 71%;
                 margin-top: -31px;
             }
@@ -293,15 +292,15 @@
             }
             body > div.container-fluid > div > div:nth-child(2) > h2 {
                 font-size: 56px;
-                width: 390px;
+                width: 351px;
                 text-align: center;
                 margin-top: 25px;
-                margin-left: 104px;
+                margin-left: 103px;
             }
             body > div.container-fluid > div > div:nth-child(2) > form {
                 display: flex;
                 flex-direction: column;
-                margin-left: 148px;
+                margin-left: 120px;
             }
             body > div.container-fluid > div > div:nth-child(2) > form > button {
                 background: #007bff;
@@ -336,7 +335,7 @@
             body > div > div.icon-world > span {
                 font-size: 143px;
                 position: absolute;
-                left: 86%;
+                left: 84%;
                 top: 41%;
                 color: #007bff29;
             }
@@ -373,7 +372,6 @@
                         <span class="material-icons">home</span>
                         <span class="material-icons">share</span>
                     </div>
-
                 </nav>
             </div>
         </header>
@@ -390,7 +388,7 @@
             <form action="#" th:action="@{/home}" method="post">
                 <button type="submit" name="button1">Study spots near me</button>
                 <select id="spot_type" name="spot_type" >
-                    <option value="">Specific type of study spot</option>
+                    <option value="" disabled selected hidden>Specific type of study spot</option>
                     <option class="btn btn-primary" value="cafe" >Cafe</option>
                     <option class="btn btn-primary" value="internet_cafe">Internet Cafe</option>
                     <option class="btn btn-primary" value="library">Library</option>
