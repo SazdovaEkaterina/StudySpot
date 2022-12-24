@@ -52,23 +52,14 @@
         function successFunction(value) {
             var lat = value.coords.latitude;
             var long = value.coords.longitude;
-            document.getElementById('error')
-                .innerHTML = "";
-            document.getElementById('latitude')
-                .innerHTML = `Latitude: ${lat}`;
-            document.getElementById('longitude')
-                .innerHTML = `Latitude: ${long}`;
+            console.log(lat);
+            console.log(long);
 
         }
 
         // Error Function
         function errorFunction(err) {
-            document.getElementById('latitude')
-                .innerHTML = "";
-            document.getElementById('longitude')
-                .innerHTML = "";
-            document.getElementById('error')
-                .innerHTML = `Error occurred: ${err.message}`;
+                console.log(err.message);
         }
 
         // Main function to get location
@@ -83,13 +74,6 @@
 </head>
 <body onload="getLocation()">
 <div class="container-fluid">
-
-    <div>
-        <h2 id="latitude"></h2>
-        <h2 id="longitude"></h2>
-        <h2 id="error"></h2>
-    </div>
-
     <div>
         <header>
             <div class="logo-title">
