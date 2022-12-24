@@ -92,18 +92,21 @@
 
                                 <small class="text-muted">Open now</small>
                             </div>
+                          <br/>
+                          <div>
+                            <form action="#" th:action="@{/study-spots-of-type}" method="post">
+                              <!-- promeni kaj action za nova strana details-->
+                              <button type="submit" name="details_button" id="details_button" th:value="${spot.getId()}">View
+                                Details
+                              </button>
+                            </form>
+                          </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 </div>
 </body>
