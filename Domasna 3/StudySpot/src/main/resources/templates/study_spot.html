@@ -3,43 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Study Spot</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/main.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
         .container-fluid {
             padding: 0;
         }
+
         div > header > .logo-title {
             background: #84A59D;
             padding: 8px 5px 8px 84px;
             display: flex;
             align-items: center;
         }
+
         div > header > div.logo-title > span {
             font-size: 56px;
             margin-right: 14px;
         }
-        div > header > div.nav-links  {
+
+        div > header > div.nav-links {
             background: #F5CAC3;
         }
-        div > header >  div.nav-links > nav  {
+
+        div > header > div.nav-links > nav {
             margin-left: 140px;
         }
-        div > header >  div.nav-links > nav >a {
+
+        div > header > div.nav-links > nav > a {
             color: white;
         }
-        div > header > div.nav-links >nav  > span{
+
+        div > header > div.nav-links > nav > span {
             color: white;
             margin-top: 8px;
         }
+
         div > header > div.nav-links > nav > a:hover {
             color: black;
         }
+
         div > header > div > nav > div.icons {
             position: absolute;
             left: 90%;
         }
+
         div > header > div > nav > div.icons > span {
             font-size: 30px;
             color: white;
@@ -82,10 +97,34 @@
             <td th:text="${session.spot.getName()}"></td>
             <td th:text="${session.spot.getAmenity()}"></td>
             <td th:text="${session.spot.getOpening_hours()}"></td>
-            <td th:text="${session.spot.getLatitude()}"></td>
-            <td th:text="${session.spot.getLongitude()}"></td>
+            <td id="lat" th:text="${session.spot.getLatitude()}" th:value="${session.spot.getLatitude()}"></td>
+            <td id="lng" th:text="${session.spot.getLongitude()}" th:value="${session.spot.getLongitude()}"></td>
         </tr>
     </table>
+    <div id="map"></div>
+    <script th:inline="javascript">
+        function initMap() {
+            const position = {
+                lat: parseFloat(document.getElementById('lat').innerText),
+                lng: parseFloat(document.getElementById('lng').innerText)
+            };
+            const map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 26,
+                    center: position
+                }
+            );
+            const marker = new google.maps.Marker({
+                position: position,
+                map: map
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHL9i9NW1UciRlh5J3iU9FMNYHDqkocxg&callback=initMap">
+    </script>
 </div>
 </body>
 </html>
