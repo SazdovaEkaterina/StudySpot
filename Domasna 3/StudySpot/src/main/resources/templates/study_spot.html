@@ -73,6 +73,8 @@
             <div class="nav-links">
                 <nav class="nav nav-pills flex-column flex-sm-row">
                     <a class="text-sm-center nav-link " href="/home">Main Page</a>
+                    <span> > </span>
+                    <a class=" text-sm-center nav-link" href="/study-spot"> Selected study spot </a>
                     <div class="icons">
                         <span class="material-icons">home</span>
                         <span class="material-icons">share</span>
@@ -82,26 +84,54 @@
             </div>
         </header>
     </div>
-    <h1>Study spot details</h1>
-    <table>
+
+    <!--
+    NOTE: Table has to stay because displaying the map depends on the text in the table data.
+    -->
+    <table style="display: none;">
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Opening Hours</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-        </tr>
-        <tr>
-            <td th:text="${session.spot.getId()}"></td>
-            <td th:text="${session.spot.getName()}"></td>
-            <td th:text="${session.spot.getAmenity()}"></td>
-            <td th:text="${session.spot.getOpening_hours()}"></td>
-            <td id="lat" th:text="${session.spot.getLatitude()}" th:value="${session.spot.getLatitude()}"></td>
-            <td id="lng" th:text="${session.spot.getLongitude()}" th:value="${session.spot.getLongitude()}"></td>
+            <td id="lat" th:text="${session.spot.getLatitude()}"></td>
+            <td id="lng" th:text="${session.spot.getLongitude()}"></td>
         </tr>
     </table>
-    <div id="map"></div>
+
+    <div class="album py-4 bg-light">
+
+        <div class="ml-4 mr-4">
+
+            <div>
+                <div id="map"></div>
+            </div>
+
+            <div>
+                <h1 th:text="${session.spot.getName()}"></h1>
+                <p>
+                    <span th:text="${session.spot.getName()}"></span>
+                    is a
+                    <span th:text="${session.spot.getAmenity()}"></span>
+                    located in Skopje.
+                </p>
+                <hr>
+                <h2>Working Hours</h2>
+                <div>
+                    <span th:text="${session.spot.getOpening_hours()}"></span>
+                    <span th:if="${session.spot.getOpening_hours()}==null">(no information available)</span>
+                </div>
+
+                <br>
+
+                <a href="/home">
+                    <button>
+                        Go back
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script th:inline="javascript">
         function initMap() {
             const position = {
