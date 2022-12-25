@@ -46,8 +46,33 @@
             margin-top: 5px;
         }
     </style>
+
+    <script>
+        // Success function
+        function successFunction(value) {
+            var lat = value.coords.latitude;
+            var long = value.coords.longitude;
+            console.log(lat);
+            console.log(long);
+
+        }
+
+        // Error Function
+        function errorFunction(err) {
+                console.log(err.message);
+        }
+
+        // Main function to get location
+        function getLocation() {
+            navigator.geolocation
+                .getCurrentPosition(
+                    successFunction, errorFunction
+                );
+        }
+    </script>
+
 </head>
-<body>
+<body onload="getLocation()">
 <div class="container-fluid">
     <div>
         <header>
