@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Spot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        div > header > .logo-title {
+            background: #84A59D;
+            padding: 8px 5px 8px 84px;
+            display: flex;
+            align-items: center;
+        }
+
+        div > header > div.logo-title > span {
+            font-size: 56px;
+            margin-right: 14px;
+        }
+
+        div > header > div.nav-links {
+            background: #F5CAC3;
+        }
+
+        div > header > div.nav-links > nav {
+            margin-left: 140px;
+        }
+
+        div > header > div.nav-links > nav > a {
+            color: white;
+        }
+
+        div > header > div.nav-links > nav > span {
+            color: white;
+            margin-top: 8px;
+        }
+
+        div > header > div.nav-links > nav > a:hover {
+            color: black;
+        }
+
+        div > header > div > nav > div.icons {
+            position: absolute;
+            left: 90%;
+        }
+
+        div > header > div > nav > div.icons > span {
+            font-size: 30px;
+            color: white;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div>
+        <header>
+            <div class="logo-title">
+                <span class="material-icons">cast_for_education</span>
+                <h4 class="title">Study Spot</h4>
+            </div>
+            <div class="nav-links">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="text-sm-center nav-link " href="/home">Main Page</a>
+                    <span> > </span>
+                    <a class=" text-sm-center nav-link" href="/study-spot"> Selected study spot </a>
+                    <div class="icons">
+                        <span class="material-icons">home</span>
+                        <span class="material-icons">share</span>
+                    </div>
+
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <!--
+    NOTE: Table has to stay because displaying the map depends on the text in the table data.
+    -->
+    <table style="display: none;">
+        <tr>
+            <td id="lat" th:text="${session.spot.getLatitude()}"></td>
+            <td id="lng" th:text="${session.spot.getLongitude()}"></td>
+        </tr>
+    </table>
+
+    <div class="album py-4 bg-light">
+
+        <div class="ml-4 mr-4">
+
+            <div>
+                <div id="map"></div>
+            </div>
+
+            <div>
+                <h1 th:text="${session.spot.getName()}"></h1>
+                <p>
+                    <span th:text="${session.spot.getName()}"></span>
+                    is a
+                    <span th:text="${session.spot.getAmenity()}"></span>
+                    located in Skopje.
+                </p>
+                <hr>
+                <h2>Working Hours</h2>
+                <div>
+                    <span th:text="${session.spot.getOpening_hours()}"></span>
+                    <span th:if="${session.spot.getOpening_hours()}==null">(no information available)</span>
+                </div>
+
+                <br>
+
+                <a href="/home">
+                    <button>
+                        Go back
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script th:inline="javascript">
+        function initMap() {
+            const position = {
+                lat: parseFloat(document.getElementById('lat').innerText),
+                lng: parseFloat(document.getElementById('lng').innerText)
+            };
+            const map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 18,
+                    center: position
+                }
+            );
+            const marker = new google.maps.Marker({
+                position: position,
+                map: map
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHL9i9NW1UciRlh5J3iU9FMNYHDqkocxg&callback=initMap">
+    </script>
+</div>
+</body>
+</html>
