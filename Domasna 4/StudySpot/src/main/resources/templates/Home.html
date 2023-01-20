@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @media (max-width: 660px) {
+            .container-fluid {
+                padding: 0;
+            }
+            div > header > .logo-title {
+                background: #84A59D;
+                padding: 8px 5px 8px 84px;
+                display: flex;
+                align-items: center;
+            }
+            div > header > div.logo-title > span {
+                font-size: 56px;
+                margin-right: 14px;
+            }
+            div > header > div.nav-links  {
+                background: #F5CAC3;
+            }
+            div > header >  div.nav-links > nav  {
+                margin-left: 140px;
+            }
+            div > header >  div.nav-links > nav >a {
+                color: white;
+            }
+            div > header > div.nav-links >nav  > span{
+                color: white;
+                margin-top: 8px;
+            }
+            div > header > div.nav-links > nav > a:hover {
+                color: black;
+            }
+            div > header > div > nav > div.icons {
+                position: absolute;
+                left: 90%;
+            }
+            div > header > div > nav > div.icons > span {
+                font-size: 30px;
+                color: white;
+                margin-top: 5px;
+            }
+            .row{ margin-right: 0px}
+            div > div.row > div:nth-child(1) {
+                background: antiquewhite;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > span {
+                font-size: 320px;
+                margin-left: 120px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > p {
+                font-size: 13px;
+                width: 350px;
+                font-weight: 500;
+                margin-left: 107px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > h2 {
+                font-size: 40px;
+                width: 400px;
+                text-align: center;
+                margin-top: 25px;
+                margin-left: 80px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 130px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form > button {
+                background: #007bff;
+                border-radius: 7px;
+                padding: 22px;
+                margin: 11px;
+                border-color: #007bff;
+                color: white;
+                width: 240px;
+            }
+            #spot_type {
+                background: #007bff;
+                padding: 8px;
+                width: 260px;
+                border-radius: 5px;
+                color: white;
+                margin-left: 13px;
+            }
+            #spot_type > option {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            body > div > div.row > div:nth-child(2) > form > button:nth-child(3) {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                padding: 0px;
+                margin-left: 278px;
+                margin-top: -32px;
+            }
+            body > div > div.icon-world > span {
+                display: none;
+            }
+            body > div > div.circle-details {
+                color: lightgray;
+            }
+            footer a {
+                color: red;
+            }
+            body > div > div.icon-world {
+                visibility: hidden;
+            }
+        }
+        @media (min-width: 660px  )  {
+            .container-fluid {
+                padding: 0;
+            }
+            div > header > .logo-title {
+                background: #84A59D;
+                padding: 8px 5px 8px 84px;
+                display: flex;
+                align-items: center;
+            }
+            div > header > div.logo-title > span {
+                font-size: 56px;
+                margin-right: 14px;
+            }
+            div > header > div.nav-links  {
+                background: #F5CAC3;
+            }
+            div > header >  div.nav-links > nav  {
+                margin-left: 140px;
+            }
+            div > header >  div.nav-links > nav >a {
+                color: white;
+            }
+            div > header > div.nav-links >nav  > span{
+                color: white;
+                margin-top: 8px;
+            }
+            div > header > div.nav-links > nav > a:hover {
+                color: black;
+            }
+            div > header > div > nav > div.icons {
+                position: absolute;
+                left: 90%;
+            }
+            div > header > div > nav > div.icons > span {
+                font-size: 30px;
+                color: white;
+                margin-top: 5px;
+            }
+            .row{ margin-right: 0px}
+            div > div.row > div:nth-child(1) {
+                background: antiquewhite;
+                height: 632px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > span {
+                font-size: 272px;
+                margin-left: 84px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > p {
+                width: 300px;
+                font-weight: 500;
+                margin-left: 91px;
+                line-height: 34px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > h2 {
+                font-size: 47px;
+                text-align: center;
+                margin-top: 25px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 40px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form > button {
+                background: #007bff;
+                border-radius: 7px;
+                padding: 22px;
+                margin: 11px;
+                border-color: #007bff;
+                color: white;
+                width: 250px;
+            }
+            #spot_type {
+                background: #007bff;
+                padding: 8px;
+                width: 268px;
+                border-radius: 5px;
+                color: white;
+                margin-left: 13px;
+            }
+            #spot_type > option {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            body > div > div.row > div:nth-child(2) > form > button:nth-child(3) {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                padding: 0px;
+                margin-left: 287px;
+                margin-top: -32px;
+            }
+            body > div > div.icon-world > span {
+                font-size: 128px;
+                position: absolute;
+                left: 79%;
+                top: 32%;
+                color: #007bff29;
+            }
+            body > div > div.circle-details {
+                position: absolute;
+                left: 88%;
+                color: lightgray;
+                margin-top: -61px;
+                position: absolute;
+                left: 88%;
+                color: lightgray;
+                margin-top: -61px;
+            }
+            footer {
+                width: 158px !important;
+                left: 71%;
+                margin-top: -31px;
+            }
+            footer a {
+                color: red;
+            }
+
+        }
+        @media (min-width: 1000px) {
+            .container-fluid {
+                padding: 0;
+            }
+            div > header > .logo-title {
+                background: #84A59D;
+                padding: 8px 5px 8px 84px;
+                display: flex;
+                align-items: center;
+            }
+            div > header > div.logo-title > span {
+                font-size: 56px;
+                margin-right: 14px;
+            }
+            div > header > div.nav-links  {
+                background: #F5CAC3;
+            }
+            div > header >  div.nav-links > nav  {
+                margin-left: 140px;
+            }
+            div > header >  div.nav-links > nav >a {
+                color: white;
+            }
+            div > header > div.nav-links >nav  > span{
+                color: white;
+                margin-top: 8px;
+            }
+            div > header > div.nav-links > nav > a:hover {
+                color: black;
+            }
+            div > header > div > nav > div.icons {
+                position: absolute;
+                left: 90%;
+            }
+            div > header > div > nav > div.icons > span {
+                font-size: 30px;
+                color: white;
+                margin-top: 5px;
+            }
+            .row{ margin-right: 0px}
+            div > div.row > div:nth-child(1) {
+                background: antiquewhite;
+                height: 632px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > span {
+                font-size: 348px;
+                margin-left: 131px;
+            }
+            body > div.container-fluid > div > div:nth-child(1) > p {
+                font-size: 18px;
+                width: 329px;
+                font-weight: 500;
+                margin-left: 153px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > h2 {
+                font-size: 56px;
+                width: 351px;
+                text-align: center;
+                margin-top: 25px;
+                margin-left: 103px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form {
+                display: flex;
+                flex-direction: column;
+                margin-left: 120px;
+            }
+            body > div.container-fluid > div > div:nth-child(2) > form > button {
+                background: #007bff;
+                border-radius: 7px;
+                padding: 22px;
+                margin: 11px;
+                border-color: #007bff;
+                color: white;
+                width: 266px;
+            }
+            #spot_type {
+                background: #007bff;
+                padding: 8px;
+                width: 290px;
+                border-radius: 5px;
+                color: white;
+                margin-left: 13px;
+            }
+            #spot_type > option {
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            body > div > div.row > div:nth-child(2) > form > button:nth-child(3) {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                padding: 0px;
+                margin-left: 306px;
+                margin-top: -32px;
+            }
+            body > div > div.icon-world > span {
+                font-size: 143px;
+                position: absolute;
+                left: 84%;
+                top: 41%;
+                color: #007bff29;
+            }
+            body > div > div.circle-details {
+                position: absolute;
+                left: 88%;
+                color: lightgray;
+                margin-top: -61px;
+            }
+            footer {
+                width: 200px !important;
+                left: 71%;
+                margin-top: -31px;
+            }
+            footer a {
+                color: red;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div>
+        <header>
+            <div class="logo-title">
+                <span class="material-icons">cast_for_education</span>
+                <h4 class="title">Study Spot</h4>
+            </div>
+            <div class="nav-links">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="text-sm-center nav-link " href="/home">Main Page</a>
+                    <div class="icons">
+                        <span class="material-icons">home</span>
+                        <span class="material-icons">share</span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="row">
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+            <span class="material-icons">manage_accounts</span>
+            <p>We are here to help you find a location for studying and working.We
+                offer information about libraries, coworking spaces, cafes and restaurants that
+                that are suitable for studying. Enjoy! </p>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12">
+            <h2>What are you looking for?</h2>
+            <form action="#" th:action="@{/home}" method="post">
+                <button type="submit" name="button1">Study spots near me</button>
+                <select id="spot_type" name="spot_type" >
+                    <option value="" disabled selected hidden>Specific type of study spot</option>
+                    <option class="btn btn-primary" value="cafe" >Cafe</option>
+                    <option class="btn btn-primary" value="internet_cafe">Internet Cafe</option>
+                    <option class="btn btn-primary" value="library">Library</option>
+                    <option class="btn btn-primary" value="university">University</option>
+                    <option class="btn btn-primary" value="reading room">Reading Room</option>
+                </select>
+                <button type="submit" name="button2"> <span class="material-icons">search </span></button>
+                <button class="btn btn-primary" type="submit" name="button3">Surprise me</button>
+            </form>
+        </div>
+    </div>
+    <div class="icon-world">
+        <span class="material-icons">public</span>
+    </div>
+    <div class="circle-details">
+        <span class="material-icons">lens</span>
+        <span class="material-icons">lens</span>
+        <span class="material-icons">lens</span>
+    </div>
+    <footer class="col-sm-12 col-md-12 col-lg-12">
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+    </footer>
+</div>
+</body>
+</html>
