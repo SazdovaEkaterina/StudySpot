@@ -34,13 +34,13 @@ public class DataHolder {
             String amenity = null;
             String opening_hours = null;
             if (attributes.length >= 1) {
-                id = Long.valueOf(attributes[0]);
+                id = Long.parseLong(attributes[0]);
             }
             if (attributes.length >= 2) {
-                lat = Double.valueOf(attributes[1]);
+                lat = Double.parseDouble(attributes[1]);
             }
             if (attributes.length >= 3) {
-                lon = Double.valueOf(attributes[2]);
+                lon = Double.parseDouble(attributes[2]);
             }
             if (attributes.length >= 4) {
                 name = attributes[3];

@@ -21,7 +21,7 @@ public class SpotRepository {
                 .findFirst().get();
     }
 
-    public Spot generateRandom(){
+    public Spot generateRandom() {
         Random random = new Random();
         int randomIndex = random.nextInt(spots.size());
         Spot randomSpot = spots.get(randomIndex);
